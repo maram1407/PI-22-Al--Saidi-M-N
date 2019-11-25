@@ -20,7 +20,7 @@ namespace FormTractor
         /// <summary>
         /// Количество уровней-парковок
         /// </summary>
-
+        FormTractorConfig form;
         private const int countLevel = 5;
         public FormParking()
         {
@@ -56,53 +56,7 @@ namespace FormTractor
 
 
         }
-        private void buttonSetTractor_Click(object sender, EventArgs e)
-        {
-            if (listBoxLevels.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    var tractor = new Tractor(100, 1000, dialog.Color);
-                    int place = parking[listBoxLevels.SelectedIndex] + tractor;
-                    if (place == -1)
-                    {
-                        MessageBox.Show("Нет свободных мест", "Ошибка",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    }
-                    Draw();
-                }
-            }
-
-        }
-
-        private void buttonSetTractorBllduser_Click(object sender, EventArgs e)
-        {
-            if (listBoxLevels.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        var tractor = new TractorBulldozer(100, 1000, dialog.Color,
-                               dialogDop.Color, true, true);
-                        int place = parking[listBoxLevels.SelectedIndex] + tractor;
-                        if (place == -1)
-                        {
-                            MessageBox.Show("Нет свободных мест", "Ошибка",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-                        Draw();
-                    }
-                }
-
-            }
-
-        }
 
         private void buttonTakeTractor_Click(object sender, EventArgs e)
         {
@@ -139,6 +93,33 @@ namespace FormTractor
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
+        }
+
+        private void buttonSetTraktor_Click(object sender, EventArgs e)
+        {
+            form = new FormTractorConfig();
+            form.AddEvent(AddTractor);
+            form.Show();
+
+        }
+        /// <summary>
+        /// Метод добавления машины
+        /// </summary>
+        /// <param name="car"></param>
+        private void AddTractor(ITransport tractor)
+        {
+            if (tractor != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = parking[listBoxLevels.SelectedIndex] + tractor;
+                if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
         }
 
 

@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
-            this.buttonSetTractor = new System.Windows.Forms.Button();
-            this.buttonSetTractorBllduser = new System.Windows.Forms.Button();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeTractor = new System.Windows.Forms.PictureBox();
@@ -38,6 +36,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            // this.lableRemoveTractor = new System.Windows.Forms.Label();
+            //this.buttonSetTractor = new System.Windows.Forms.Button();
+            this.buttonSetTraktor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTractor)).BeginInit();
@@ -51,26 +52,6 @@
             this.pictureBoxParking.Size = new System.Drawing.Size(645, 450);
             this.pictureBoxParking.TabIndex = 0;
             this.pictureBoxParking.TabStop = false;
-            // 
-            // buttonSetTractor
-            // 
-            this.buttonSetTractor.Location = new System.Drawing.Point(673, 142);
-            this.buttonSetTractor.Name = "buttonSetTractor";
-            this.buttonSetTractor.Size = new System.Drawing.Size(113, 33);
-            this.buttonSetTractor.TabIndex = 1;
-            this.buttonSetTractor.Text = "Трактор";
-            this.buttonSetTractor.UseVisualStyleBackColor = true;
-            this.buttonSetTractor.Click += new System.EventHandler(this.buttonSetTractor_Click);
-            // 
-            // buttonSetTractorBllduser
-            // 
-            this.buttonSetTractorBllduser.Location = new System.Drawing.Point(673, 181);
-            this.buttonSetTractorBllduser.Name = "buttonSetTractorBllduser";
-            this.buttonSetTractorBllduser.Size = new System.Drawing.Size(113, 39);
-            this.buttonSetTractorBllduser.TabIndex = 2;
-            this.buttonSetTractorBllduser.Text = "Трактор бульдоер";
-            this.buttonSetTractorBllduser.UseVisualStyleBackColor = true;
-            this.buttonSetTractorBllduser.Click += new System.EventHandler(this.buttonSetTractorBllduser_Click);
             // 
             // maskedTextBox
             // 
@@ -137,20 +118,46 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Уравни:";
             // 
+            // lableRemoveTractor
+            // 
+            // this.lableRemoveTractor.AutoSize = true;
+            //this.lableRemoveTractor.Location = new System.Drawing.Point(697, 10);
+            //this.lableRemoveTractor.Name = "lableRemoveTractor";
+            //this.lableRemoveTractor.Size = new System.Drawing.Size(48, 13);
+            //this.lableRemoveTractor.TabIndex = 2;
+            //this.lableRemoveTractor.Text = "забрат Tractor:";
+            // 
+            // buttonSetTractor
+            // 
+            // this.buttonSetTractor.Location = new System.Drawing.Point(10, 153);
+            //this.buttonSetTractor.Name = "buttonSetTractor";
+            //this.buttonSetTractor.Size = new System.Drawing.Size(146, 40);
+            //this.buttonSetTractor.TabIndex = 0;
+            //this.buttonSetTractor.Text = "заказать Tractor:";
+            //this.buttonSetTractor.UseVisualStyleBackColor = true;
+            // 
+            // buttonSetTraktor
+            // 
+            this.buttonSetTraktor.Location = new System.Drawing.Point(666, 142);
+            this.buttonSetTraktor.Name = "buttonSetTraktor";
+            this.buttonSetTraktor.Size = new System.Drawing.Size(120, 43);
+            this.buttonSetTraktor.TabIndex = 8;
+            this.buttonSetTraktor.Text = "Добавить";
+            this.buttonSetTraktor.UseVisualStyleBackColor = true;
+            this.buttonSetTraktor.Click += new System.EventHandler(this.buttonSetTraktor_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 450);
+            this.Controls.Add(this.buttonSetTraktor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.buttonSetTractorBllduser);
-            this.Controls.Add(this.buttonSetTractor);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
             this.Text = "Стоянка";
-
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -163,15 +170,16 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxParking;
-        private System.Windows.Forms.Button buttonSetTractor;
-        private System.Windows.Forms.Button buttonSetTractorBllduser;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonTakeTractor;
         private System.Windows.Forms.Label label1;
+        // private System.Windows.Forms.Label lableRemoveTractor;
+        // private System.Windows.Forms.Button buttonSetTractor;
         private System.Windows.Forms.PictureBox pictureBoxTakeTractor;
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonSetTraktor;
     }
 }
 
