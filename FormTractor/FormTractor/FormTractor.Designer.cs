@@ -30,6 +30,7 @@
         {
             this.pictureBoxTractor = new System.Windows.Forms.PictureBox();
             this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonCreateBullozer = new System.Windows.Forms.Button();
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
@@ -56,6 +57,16 @@
             this.buttonCreate.Text = "создать";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            // 
+            // buttonCreateBullozer
+            // 
+            this.buttonCreateBullozer.Location = new System.Drawing.Point(152, 12);
+            this.buttonCreateBullozer.Name = "buttonCreateBullozer";
+            this.buttonCreateBullozer.Size = new System.Drawing.Size(180, 23);
+            this.buttonCreateBullozer.TabIndex = 2;
+            this.buttonCreateBullozer.Text = "создать Трактор-бульдозер";
+            this.buttonCreateBullozer.UseVisualStyleBackColor = true;
+            this.buttonCreateBullozer.Click += new System.EventHandler(this.buttonCreateBullozer_Click);
             // 
             // buttonRight
             // 
@@ -114,10 +125,12 @@
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonRight);
+            this.Controls.Add(this.buttonCreateBullozer);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.pictureBoxTractor);
             this.Name = "FormTractor";
             this.Text = "Tractor";
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTractor)).EndInit();
             this.ResumeLayout(false);
 
@@ -127,6 +140,7 @@
 
         private System.Windows.Forms.PictureBox pictureBoxTractor;
         private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonCreateBullozer;
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonLeft;
         private System.Windows.Forms.Button buttonDown;
