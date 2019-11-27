@@ -18,6 +18,18 @@ namespace FormTractor
             Weight = weight;
             MainColor = mainColor;
         }
+        /// </summary>
+        /// <param name="info">Информация по объекту</param>
+        public Tractor(string info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
+        }
 
         public override void MoveTransport(Direction direction)
         {
@@ -60,20 +72,29 @@ namespace FormTractor
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(Color.Yellow);
+            //Brush Glass = new SolidBrush(Color.Blue);
 
             g.FillRectangle(Kuzov, _startPosX - 50, _startPosY - 30, 50, 30);
             g.DrawRectangle(pen, _startPosX - 50, _startPosY - 30, 50, 30);
             g.FillRectangle(Kuzov, _startPosX - 50, _startPosY, 75, 40);
             g.DrawRectangle(pen, _startPosX - 50, _startPosY, 75, 40);
+
+            //Стекло
             //مراه
             g.FillRectangle(Kuzov, _startPosX - 25, _startPosY - 25, 20, 25);
             g.DrawRectangle(pen, _startPosX - 25, _startPosY - 25, 20, 25);
+
             //Колеса عجلات
             g.DrawEllipse(pen, _startPosX - 50, _startPosY + 10, 40, 40);
             g.FillEllipse(Wheels, _startPosX - 50, _startPosY + 10, 40, 40);
             g.DrawEllipse(pen, _startPosX + 5, _startPosY + 30, 20, 20);
             g.FillEllipse(Wheels, _startPosX + 5, _startPosY + 30, 20, 20);
 
+
+        }
+        public override string ToString()
+        {
+            return MaxSpeed + ";" + Weight + ";" + MainColor.Name;
         }
     }
 }
