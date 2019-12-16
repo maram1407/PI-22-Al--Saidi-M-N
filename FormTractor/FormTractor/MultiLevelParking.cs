@@ -73,20 +73,21 @@ namespace FormTractor
                 {
                     //Начинаем уровень
                     sw.WriteLine("Level");
-                    for (int i = 0; i < countPlaces; i++)
+                    foreach(ITransport tractor in level)
+                   
                     {
-                        var tractor = level[i];
+                       
                         if (tractor != null)
                         {
                             //если место не пустое
                             //Записываем тип мшаины
                             if (tractor.GetType().Name == "Tractor")
                             {
-                                sw.Write(i + ":Tractor:");
+                                sw.WriteLine(level.GetKey + ":Tractor:");
                             }
                             if (tractor.GetType().Name == "TractorBulldozer")
                             {
-                                sw.Write(i + ":TractorBulldozer:");
+                                sw.WriteLine(level.GetKey + ":TractorBulldozer:");
                             }
                             //Записываемые параметры
                             sw.WriteLine(tractor);
@@ -161,7 +162,9 @@ namespace FormTractor
                 }
             }
 
-
-        }
+        }        public void Sort()
+        {
+            parkingStages.Sort();
+        }
     }
 }
