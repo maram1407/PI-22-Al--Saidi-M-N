@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using System.Drawing;
 namespace FormTractor
 {
     public partial class FormParking : Form
@@ -18,7 +17,8 @@ namespace FormTractor
             InitializeComponent();
             parking = new Parking<ITransport>(20, pictureBoxParking.Width,
             pictureBoxParking.Height);
-            Draw();
+            Draw();
+
         }
         /// Метод отрисовки парковки
         /// </summary>
@@ -41,7 +41,8 @@ namespace FormTractor
 
                 int place = parking + tractor;
                 Draw();
-            }
+            }
+
         }
 
         private void buttonSetTractorBllduser_Click(object sender, EventArgs e)
@@ -84,7 +85,8 @@ namespace FormTractor
                     pictureBoxTakeTractor.Image = bmp;
                 }
                 Draw();
-            }
+            }
+
         }
 
 
