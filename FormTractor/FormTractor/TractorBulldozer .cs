@@ -24,7 +24,6 @@ namespace FormTractor
             Weight = weight;
             MainColor = mainColor;
             DopColor = dopColor;
-
             Crane = crane;
             Bulldozerr = bulldozerr;
         }
