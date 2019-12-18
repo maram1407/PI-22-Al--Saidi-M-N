@@ -25,8 +25,6 @@ namespace FormTractor
         public FormParking()
         {
             InitializeComponent();
-
-
             parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
             pictureBoxParking.Height);
 
