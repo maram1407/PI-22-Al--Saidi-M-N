@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.IO;
 
 namespace FormTractor
@@ -22,7 +21,8 @@ namespace FormTractor
         /// <summary>
         /// Высота окна отрисовки
         /// </summary>
-        private int pictureHeight;
+        private int pictureHeight;
+
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -160,6 +160,8 @@ namespace FormTractor
                 }
             }
             return true;
-        }
+        }
+
+
     }
 }
