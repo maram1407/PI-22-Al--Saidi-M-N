@@ -45,8 +45,7 @@ namespace FormTractor
             _ScreenHeight = height;
         }
 
-        //Начальная позиция установки трактора
-
+       
 
         //Перемещение трактора
         public void MoveTransport(Direction direction)
@@ -85,15 +84,12 @@ namespace FormTractor
             }
         }
 
-        //Отрисовка трактора
-
-        // public override void DrawTractor(Graphics g)
+        
         public void DrawTractor(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
-            //Brush Glass = new SolidBrush(GlassColor);
             // отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка
             // Form1 на него "легла")
             if (Crane)
