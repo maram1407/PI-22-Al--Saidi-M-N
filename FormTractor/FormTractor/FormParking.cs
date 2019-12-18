@@ -26,8 +26,6 @@ namespace FormTractor
         public FormParking()
         {
             InitializeComponent();
-
-
             parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
             pictureBoxParking.Height);
 
@@ -100,7 +98,8 @@ namespace FormTractor
         {
             form = new FormTractorConfig();
             form.AddEvent(AddTractor);
-            form.Show();
+            form.Show();
+
         }
         /// <summary>
         /// Метод добавления машины
