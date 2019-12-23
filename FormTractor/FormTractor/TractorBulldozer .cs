@@ -45,7 +45,6 @@ namespace FormTractor
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
-            //Brush Glass = new SolidBrush(GlassColor);
             // отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка
             // Form1 на него "легла")
             if (Crane)
@@ -163,6 +162,7 @@ namespace FormTractor
         public override int GetHashCode()
         {
             return base.GetHashCode();
-        }
+        }
+
     }
 }
