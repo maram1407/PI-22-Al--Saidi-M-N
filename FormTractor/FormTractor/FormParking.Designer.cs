@@ -81,7 +81,7 @@
             // 
             this.groupBox1.Controls.Add(this.pictureBoxTakeTractor);
             this.groupBox1.Controls.Add(this.buttonTakeTractor);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelPlace);
             this.groupBox1.Controls.Add(this.maskedTextBox);
             this.groupBox1.Location = new System.Drawing.Point(651, 226);
             this.groupBox1.Name = "groupBox1";
