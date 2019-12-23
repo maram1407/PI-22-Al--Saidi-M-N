@@ -33,11 +33,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeTractor = new System.Windows.Forms.PictureBox();
             this.buttonTakeTractor = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelPlace = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            // this.lableRemoveTractor = new System.Windows.Forms.Label();
-            //this.buttonSetTractor = new System.Windows.Forms.Button();
+            this.labelLevel = new System.Windows.Forms.Label();
             this.buttonSetTraktor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -91,14 +89,14 @@
             this.buttonTakeTractor.UseVisualStyleBackColor = true;
             this.buttonTakeTractor.Click += new System.EventHandler(this.buttonTakeTractor_Click);
             // 
-            // label1
+            // labelPlace
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Место:\r\n";
+            this.labelPlace.AutoSize = true;
+            this.labelPlace.Location = new System.Drawing.Point(6, 16);
+            this.labelPlace.Name = "label1";
+            this.labelPlace.Size = new System.Drawing.Size(42, 13);
+            this.labelPlace.TabIndex = 4;
+            this.labelPlace.Text = "Место:\r\n";
             // 
             // listBoxLevels
             // 
@@ -109,32 +107,14 @@
             this.listBoxLevels.TabIndex = 7;
             this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
             // 
-            // label2
+            // labelLevel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(697, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Уравни:";
-            // 
-            // lableRemoveTractor
-            // 
-            // this.lableRemoveTractor.AutoSize = true;
-            //this.lableRemoveTractor.Location = new System.Drawing.Point(697, 10);
-            //this.lableRemoveTractor.Name = "lableRemoveTractor";
-            //this.lableRemoveTractor.Size = new System.Drawing.Size(48, 13);
-            //this.lableRemoveTractor.TabIndex = 2;
-            //this.lableRemoveTractor.Text = "забрат Tractor:";
-            // 
-            // buttonSetTractor
-            // 
-            // this.buttonSetTractor.Location = new System.Drawing.Point(10, 153);
-            //this.buttonSetTractor.Name = "buttonSetTractor";
-            //this.buttonSetTractor.Size = new System.Drawing.Size(146, 40);
-            //this.buttonSetTractor.TabIndex = 0;
-            //this.buttonSetTractor.Text = "заказать Tractor:";
-            //this.buttonSetTractor.UseVisualStyleBackColor = true;
+            this.labelLevel.AutoSize = true;
+            this.labelLevel.Location = new System.Drawing.Point(697, 10);
+            this.labelLevel.Name = "labelLevel";
+            this.labelLevel.Size = new System.Drawing.Size(48, 13);
+            this.labelLevel.TabIndex = 7;
+            this.labelLevel.Text = "Уравни:";
             // 
             // buttonSetTraktor
             // 
@@ -173,12 +153,10 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonTakeTractor;
-        private System.Windows.Forms.Label label1;
-        // private System.Windows.Forms.Label lableRemoveTractor;
-        // private System.Windows.Forms.Button buttonSetTractor;
+        private System.Windows.Forms.Label labelPlace;
         private System.Windows.Forms.PictureBox pictureBoxTakeTractor;
         private System.Windows.Forms.ListBox listBoxLevels;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelLevel;
         private System.Windows.Forms.Button buttonSetTraktor;
     }
 }
