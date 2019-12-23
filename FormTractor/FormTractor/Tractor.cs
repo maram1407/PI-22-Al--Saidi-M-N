@@ -72,8 +72,7 @@ namespace FormTractor
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(Color.Yellow);
-            //Brush Glass = new SolidBrush(Color.Blue);
-
+            
             g.FillRectangle(Kuzov, _startPosX - 50, _startPosY - 30, 50, 30);
             g.DrawRectangle(pen, _startPosX - 50, _startPosY - 30, 50, 30);
             g.FillRectangle(Kuzov, _startPosX - 50, _startPosY, 75, 40);
