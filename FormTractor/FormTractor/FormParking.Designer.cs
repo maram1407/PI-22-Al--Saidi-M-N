@@ -35,9 +35,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeTractor = new System.Windows.Forms.PictureBox();
             this.buttonTakeTractor = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelPlase = new System.Windows.Forms.Label();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelLevel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTractor)).BeginInit();
@@ -90,7 +90,7 @@
             this.groupBox1.Size = new System.Drawing.Size(161, 224);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "действия";
             // 
             // pictureBoxTakeTractor
             // 
@@ -110,14 +110,14 @@
             this.buttonTakeTractor.UseVisualStyleBackColor = true;
             this.buttonTakeTractor.Click += new System.EventHandler(this.buttonTakeTractor_Click);
             // 
-            // label1
+            // labelPlase
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Место:\r\n";
+            this.labelPlase.AutoSize = true;
+            this.labelPlase.Location = new System.Drawing.Point(6, 16);
+            this.labelPlase.Name = "labelPlase";
+            this.labelPlase.Size = new System.Drawing.Size(42, 13);
+            this.labelPlase.TabIndex = 4;
+            this.labelPlase.Text = "Место:\r\n";
             // 
             // listBoxLevels
             // 
@@ -128,14 +128,14 @@
             this.listBoxLevels.TabIndex = 7;
             this.listBoxLevels.SelectedIndexChanged += new System.EventHandler(this.listBoxLevels_SelectedIndexChanged);
             // 
-            // label2
+            // labelLevel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(697, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Уравни:";
+            this.labelLevel.AutoSize = true;
+            this.labelLevel.Location = new System.Drawing.Point(697, 10);
+            this.labelLevel.Name = "labelLevel";
+            this.labelLevel.Size = new System.Drawing.Size(48, 13);
+            this.labelLevel.TabIndex = 7;
+            this.labelLevel.Text = "Уравни:";
             // 
             // FormParking
             // 
@@ -168,10 +168,10 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonTakeTractor;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPlase;
         private System.Windows.Forms.PictureBox pictureBoxTakeTractor;
         private System.Windows.Forms.ListBox listBoxLevels;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelLevel;
     }
 }
 
