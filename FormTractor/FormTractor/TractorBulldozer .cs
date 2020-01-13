@@ -1,22 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 
 namespace FormTractor
 {
+
     class TractorBulldozer : Tractor
     {
+
         public bool Crane { private set; get; }
         public bool Bulldozerr { private set; get; }
         public Color DopColor { private set; get; }
         public Color GlassColor { private set; get; }
 
         public TractorBulldozer(int maxSpeed, int weight, Color mainColor, Color dopColor, bool crane, bool bulldozerr)
-            : base(maxSpeed, weight, mainColor)
+:base(maxSpeed,  weight,  mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -25,6 +23,7 @@ namespace FormTractor
             Crane = crane;
             Bulldozerr = bulldozerr;
         }
+
         public TractorBulldozer(string info) : base(info)
         {
             string[] strs = info.Split(';');
@@ -39,13 +38,18 @@ namespace FormTractor
 
             }
         }
+
         public override void DrawTractor(Graphics g)
+
+     
         {
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
+
             // отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка
             // Form1 на него "легла")
+
             if (Crane)
             {
                 g.DrawRectangle(pen, _startPosX - 50, _startPosY - 50, 5, 50);
@@ -69,15 +73,19 @@ namespace FormTractor
                 g.FillPolygon(Wheels, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
             }
 
+
             base.DrawTractor(g);
         }
         public void SetDopColor(Color color)
         {
             DopColor = color;
+
         }
+
         public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Crane + ";" + Bulldozerr;
         }
+
     }
 }

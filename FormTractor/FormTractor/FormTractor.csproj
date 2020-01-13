@@ -53,11 +53,13 @@
     <Compile Include="FormParking.Designer.cs">
       <DependentUpon>FormParking.cs</DependentUpon>
     </Compile>
+
     <Compile Include="FormTractorConfig.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTractorConfig.Designer.cs">
       <DependentUpon>FormTractorConfig.cs</DependentUpon>
+
     </Compile>
     <Compile Include="ITransport.cs" />
     <Compile Include="MultiLevelParking.cs" />
@@ -70,8 +72,10 @@
     <EmbeddedResource Include="FormParking.resx">
       <DependentUpon>FormParking.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="FormTractorConfig.resx">
       <DependentUpon>FormTractorConfig.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
