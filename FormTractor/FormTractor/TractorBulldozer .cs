@@ -29,7 +29,7 @@ namespace FormTractor
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
-           base.DrawTractor(g);
+           
             if (Crane)
             {
                 g.DrawRectangle(pen, _startPosX - 50, _startPosY - 50, 5, 50);
@@ -50,6 +50,7 @@ namespace FormTractor
                 g.DrawPolygon(pen, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
                 g.FillPolygon(Wheels, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
             }
+base.DrawTractor(g);
 
 
         }
