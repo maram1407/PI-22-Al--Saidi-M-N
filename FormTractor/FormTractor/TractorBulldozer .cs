@@ -24,9 +24,8 @@ namespace FormTractor
             Crane = crane;
             Bulldozerr = bulldozerr;
         }          
-       
         
-        public void DrawTractor(Graphics g)
+        public override void DrawTractor(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
