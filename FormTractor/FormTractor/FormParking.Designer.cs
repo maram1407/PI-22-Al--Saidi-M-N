@@ -34,9 +34,11 @@
             this.pictureBoxTakeTractor = new System.Windows.Forms.PictureBox();
             this.buttonTakeTractor = new System.Windows.Forms.Button();
             this.labelPlace = new System.Windows.Forms.Label();
+
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.labelLevel = new System.Windows.Forms.Label();
             this.buttonSetTraktor = new System.Windows.Forms.Button();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTractor)).BeginInit();
@@ -90,10 +92,12 @@
             this.buttonTakeTractor.Click += new System.EventHandler(this.buttonTakeTractor_Click);
             // 
             // labelPlace
+
             // 
             this.labelPlace.AutoSize = true;
             this.labelPlace.Location = new System.Drawing.Point(6, 16);
             this.labelPlace.Name = "label1";
+
             this.labelPlace.Size = new System.Drawing.Size(42, 13);
             this.labelPlace.TabIndex = 4;
             this.labelPlace.Text = "Место:\r\n";
@@ -115,6 +119,7 @@
             this.labelLevel.Size = new System.Drawing.Size(48, 13);
             this.labelLevel.TabIndex = 7;
             this.labelLevel.Text = "Уравни:";
+
             // 
             // buttonSetTraktor
             // 
@@ -125,6 +130,7 @@
             this.buttonSetTraktor.Text = "Добавить";
             this.buttonSetTraktor.UseVisualStyleBackColor = true;
             this.buttonSetTraktor.Click += new System.EventHandler(this.buttonSetTraktor_Click);
+
             // 
             // FormParking
             // 
@@ -157,7 +163,9 @@
         private System.Windows.Forms.PictureBox pictureBoxTakeTractor;
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Label labelLevel;
+
         private System.Windows.Forms.Button buttonSetTraktor;
+
     }
 }
 
