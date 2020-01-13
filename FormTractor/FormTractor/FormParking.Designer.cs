@@ -32,12 +32,12 @@
             this.buttonSetTractor = new System.Windows.Forms.Button();
             this.buttonSetTractorBllduser = new System.Windows.Forms.Button();
             this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             this.pictureBoxTakeTractor = new System.Windows.Forms.PictureBox();
             this.buttonTakeTractor = new System.Windows.Forms.Button();
             this.labelPlace = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTractor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,18 +77,18 @@
             this.maskedTextBox.Size = new System.Drawing.Size(35, 20);
             this.maskedTextBox.TabIndex = 3;
             // 
-            // groupBox1
+            // groupBox
             // 
-            this.groupBox1.Controls.Add(this.pictureBoxTakeTractor);
-            this.groupBox1.Controls.Add(this.buttonTakeTractor);
-            this.groupBox1.Controls.Add(this.labelPlace);
-            this.groupBox1.Controls.Add(this.maskedTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(651, 226);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(161, 224);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "действия";
+            this.groupBox.Controls.Add(this.pictureBoxTakeTractor);
+            this.groupBox.Controls.Add(this.buttonTakeTractor);
+            this.groupBox.Controls.Add(this.labelPlace);
+            this.groupBox.Controls.Add(this.maskedTextBox);
+            this.groupBox.Location = new System.Drawing.Point(651, 226);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(161, 224);
+            this.groupBox.TabIndex = 4;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "действия";
             // 
             // pictureBoxTakeTractor
             // 
@@ -123,15 +123,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 450);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox);
             this.Controls.Add(this.buttonSetTractorBllduser);
             this.Controls.Add(this.buttonSetTractor);
             this.Controls.Add(this.pictureBoxParking);
             this.Name = "FormParking";
             this.Text = "Стоянка";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTractor)).EndInit();
             this.ResumeLayout(false);
 
@@ -143,7 +143,7 @@
         private System.Windows.Forms.Button buttonSetTractor;
         private System.Windows.Forms.Button buttonSetTractorBllduser;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.Button buttonTakeTractor;
         private System.Windows.Forms.Label labelPlace;
         private System.Windows.Forms.PictureBox pictureBoxTakeTractor;
