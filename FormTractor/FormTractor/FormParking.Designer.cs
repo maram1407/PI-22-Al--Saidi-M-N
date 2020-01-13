@@ -138,7 +138,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 450);
             this.Controls.Add(this.buttonSetTraktor);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelLevel);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxParking);
