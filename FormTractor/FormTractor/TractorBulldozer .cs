@@ -30,7 +30,8 @@ namespace FormTractor
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
-           
+
+            base.DrawTractor(g);
             if (Crane)
             {
                 g.DrawRectangle(pen, _startPosX - 50, _startPosY - 50, 5, 50);
