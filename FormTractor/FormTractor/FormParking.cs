@@ -1,3 +1,4 @@
+
 ﻿using NLog;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,8 @@ namespace FormTractor
         public FormParking()
         {
             InitializeComponent();
-            logger = LogManager.GetCurrentClassLogger();            parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
+            logger = LogManager.GetCurrentClassLogger();
+            parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
             pictureBoxParking.Height);
 
             //заполнение listBox
@@ -115,7 +117,8 @@ namespace FormTractor
         {
             form = new FormTractorConfig();
             form.AddEvent(AddTractor);
-            form.Show();
+            form.Show();
+
         }
         /// <summary>
         /// Метод добавления машины
