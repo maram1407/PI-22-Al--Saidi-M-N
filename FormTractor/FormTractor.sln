@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormTractor", "FormTractor\FormTractor.csproj", "{028B6FB9-7E8D-4C1B-8684-52B558389E22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{028B6FB9-7E8D-4C1B-8684-52B558389E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{028B6FB9-7E8D-4C1B-8684-52B558389E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{028B6FB9-7E8D-4C1B-8684-52B558389E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{028B6FB9-7E8D-4C1B-8684-52B558389E22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {270D24D7-CDC5-4A85-8B56-30D0121B0E92}
+	EndGlobalSection
+EndGlobal
