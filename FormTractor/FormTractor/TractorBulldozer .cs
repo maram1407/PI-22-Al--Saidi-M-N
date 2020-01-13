@@ -1,25 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 namespace FormTractor
 {
 
 
-    class TractorBulldozer
+    class TractorBulldozer:Tractor
     {
-        private float _startPosX;
-        private float _startPosY;
-        private int _ScreenWidth;
-        private int _ScreenHeight;
-        public int MaxSpeed { protected set; get; }
-        public float Weight { protected set; get; }
-        public Color MainColor { protected set; get; }
-        protected const int tractorWidth = 100;
-        protected const int tractorHeight = 60;
+  
 
         public bool Crane { private set; get; }
         public bool Bulldozerr { private set; get; }
@@ -27,7 +15,7 @@ namespace FormTractor
         public Color GlassColor { private set; get; }
 
         public TractorBulldozer(int maxSpeed, int weight, Color mainColor, Color dopColor, bool crane, bool bulldozerr)
-
+            :base(maxSpeed,  weight, mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
