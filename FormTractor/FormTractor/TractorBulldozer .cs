@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 namespace FormTractor
 {
 
-
-    class TractorBulldozer : Tractor
+    class TractorBulldozer:Tractor
     {
+     
 
         public bool Crane { private set; get; }
         public bool Bulldozerr { private set; get; }
@@ -18,24 +14,25 @@ namespace FormTractor
         public Color GlassColor { private set; get; }
 
         public TractorBulldozer(int maxSpeed, int weight, Color mainColor, Color dopColor, bool crane, bool bulldozerr)
-            : base(maxSpeed, weight, mainColor)
+:base(maxSpeed,  weight,  mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
             MainColor = mainColor;
             DopColor = dopColor;
-
             Crane = crane;
             Bulldozerr = bulldozerr;
         }
 
-
+        
         public override void DrawTractor(Graphics g)
+
+     
         {
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
-
+           
             if (Crane)
             {
                 g.DrawRectangle(pen, _startPosX - 50, _startPosY - 50, 5, 50);
@@ -56,9 +53,58 @@ namespace FormTractor
                 g.DrawPolygon(pen, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
                 g.FillPolygon(Wheels, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
             }
-            base.DrawTractor(g);
+base.DrawTractor(g);
 
 
         }
+        public void SetPosition(int x, int y, int width, int height)
+        {
+            _startPosX = x;
+            _startPosY = y;
+            _ScreenWidth = width;
+            _ScreenHeight = height;
+        }
+
+       
+
+        //Перемещение трактора
+        public void MoveTransport(Direction direction)
+        {
+            float step = MaxSpeed * 100 / Weight;
+            switch (direction)
+            {
+                // вправо
+                case Direction.Right:
+                    if (_startPosX + step < _ScreenWidth - tractorWidth / 2)
+                    {
+                        _startPosX += step;
+                    }
+                    break;
+                //влево
+                case Direction.Left:
+                    if (_startPosX - step > tractorWidth / 2)
+                    {
+                        _startPosX -= step;
+                    }
+                    break;
+                //вверх
+                case Direction.Up:
+                    if (_startPosY - step > tractorHeight / 2)
+                    {
+                        _startPosY -= step;
+                    }
+                    break;
+                //вниз
+                case Direction.Down:
+                    if (_startPosY + step < _ScreenHeight - tractorHeight / 2)
+                    {
+                        _startPosY += step;
+                    }
+                    break;
+            }
+        }
+
+        
+        
     }
 }
