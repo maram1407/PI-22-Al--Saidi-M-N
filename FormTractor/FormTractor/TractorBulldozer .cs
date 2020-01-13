@@ -23,46 +23,16 @@ namespace FormTractor
             Crane = crane;
             Bulldozerr = bulldozerr;
         }
-      
+        public void SetPosition(int x, int y, int width, int height)
+        {
+            _startPosX = x;
+            _startPosY = y;
+          
+        }
 
        
 
-        //Перемещение трактора
-        public void MoveTransport(Direction direction)
-        {
-            float step = MaxSpeed * 100 / Weight;
-            switch (direction)
-            {
-                // вправо
-                case Direction.Right:
-                    if (_startPosX + step < _ScreenWidth - tractorWidth / 2)
-                    {
-                        _startPosX += step;
-                    }
-                    break;
-                //влево
-                case Direction.Left:
-                    if (_startPosX - step > tractorWidth / 2)
-                    {
-                        _startPosX -= step;
-                    }
-                    break;
-                //вверх
-                case Direction.Up:
-                    if (_startPosY - step > tractorHeight / 2)
-                    {
-                        _startPosY -= step;
-                    }
-                    break;
-                //вниз
-                case Direction.Down:
-                    if (_startPosY + step < 0- tractorHeight / 2)
-                    {
-                        _startPosY += step;
-                    }
-                    break;
-            }
-        }
+      
 
         
         public void DrawTractor(Graphics g)
