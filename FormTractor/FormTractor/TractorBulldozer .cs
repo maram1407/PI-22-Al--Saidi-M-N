@@ -4,10 +4,9 @@ using System.Drawing;
 namespace FormTractor
 {
 
-
     class TractorBulldozer:Tractor
     {
-  
+     
 
         public bool Crane { private set; get; }
         public bool Bulldozerr { private set; get; }
@@ -15,7 +14,7 @@ namespace FormTractor
         public Color GlassColor { private set; get; }
 
         public TractorBulldozer(int maxSpeed, int weight, Color mainColor, Color dopColor, bool crane, bool bulldozerr)
-            :base(maxSpeed,  weight, mainColor)
+:base(maxSpeed,  weight,  mainColor)
         {
             MaxSpeed = maxSpeed;
             Weight = weight;
@@ -23,15 +22,60 @@ namespace FormTractor
             DopColor = dopColor;
             Crane = crane;
             Bulldozerr = bulldozerr;
-        }          
+        }
+        public void SetPosition(int x, int y, int width, int height)
+        {
+            _startPosX = x;
+            _startPosY = y;
+          
+        }
+
+       
+
+        //Перемещение трактора
+        public void MoveTransport(Direction direction)
+        {
+            float step = MaxSpeed * 100 / Weight;
+            switch (direction)
+            {
+                // вправо
+                case Direction.Right:
+                    if (_startPosX + step < _ScreenWidth - tractorWidth / 2)
+                    {
+                        _startPosX += step;
+                    }
+                    break;
+                //влево
+                case Direction.Left:
+                    if (_startPosX - step > tractorWidth / 2)
+                    {
+                        _startPosX -= step;
+                    }
+                    break;
+                //вверх
+                case Direction.Up:
+                    if (_startPosY - step > tractorHeight / 2)
+                    {
+                        _startPosY -= step;
+                    }
+                    break;
+                //вниз
+                case Direction.Down:
+                    if (_startPosY + step < 0- tractorHeight / 2)
+                    {
+                        _startPosY += step;
+                    }
+                    break;
+            }
+        }
+
         
-        public override void DrawTractor(Graphics g)
+        public void DrawTractor(Graphics g)
         {
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
-
-            base.DrawTractor(g);
+           
             if (Crane)
             {
                 g.DrawRectangle(pen, _startPosX - 50, _startPosY - 50, 5, 50);
@@ -53,7 +97,27 @@ namespace FormTractor
                 g.FillPolygon(Wheels, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
             }
 
-           
+            // Кузов هيئه
+            g.FillRectangle(Kuzov, _startPosX - 50, _startPosY - 30, 50, 30);
+            g.DrawRectangle(pen, _startPosX - 50, _startPosY - 30, 50, 30);
+            g.FillRectangle(Kuzov, _startPosX - 50, _startPosY, 75, 40);
+            g.DrawRectangle(pen, _startPosX - 50, _startPosY, 75, 40);
+
+            //مستطيل
+            g.FillRectangle(Kuzov, _startPosX - 50, _startPosY - 30, 50, 30);
+            g.DrawRectangle(pen, _startPosX - 50, _startPosY - 30, 50, 30);
+            g.FillRectangle(Kuzov, _startPosX - 50, _startPosY, 75, 40);
+            g.DrawRectangle(pen, _startPosX - 50, _startPosY, 75, 40);
+            //Ковш
+            //مراه
+            g.FillRectangle(Kuzov, _startPosX - 25, _startPosY - 25, 20, 25);
+            g.DrawRectangle(pen, _startPosX - 25, _startPosY - 25, 20, 25);
+            //Колеса عجلات
+            g.DrawEllipse(pen, _startPosX - 50, _startPosY + 10, 40, 40);
+            g.FillEllipse(Wheels, _startPosX - 50, _startPosY + 10, 40, 40);
+            g.DrawEllipse(pen, _startPosX + 5, _startPosY + 30, 20, 20);
+            g.FillEllipse(Wheels, _startPosX + 5, _startPosY + 30, 20, 20);
+
         }
     }
 }
