@@ -89,8 +89,7 @@ namespace FormTractor
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
-            // отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка
-            // Form1 на него "легла")
+           
             if (Crane)
             {
                 g.DrawRectangle(pen, _startPosX - 50, _startPosY - 50, 5, 50);
