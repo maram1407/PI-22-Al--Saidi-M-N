@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Drawing;
 
+
 namespace FormTractor
 {
 
-    class TractorBulldozer:Tractor
+    class TractorBulldozer : Tractor
     {
-     
 
         public bool Crane { private set; get; }
         public bool Bulldozerr { private set; get; }
@@ -24,7 +24,6 @@ namespace FormTractor
             Bulldozerr = bulldozerr;
         }
 
-        
         public override void DrawTractor(Graphics g)
 
      
@@ -41,10 +40,12 @@ namespace FormTractor
                 g.FillRectangle(Kuzov, _startPosX - 45, _startPosY - 50, 60, 5);
                 g.DrawRectangle(pen, _startPosX + 15, _startPosY - 50, 5, 20);
                 g.FillRectangle(Kuzov, _startPosX + 15, _startPosY - 50, 5, 20);
+
                 //Крюк 
                 g.DrawRectangle(pen, _startPosX + 17, _startPosY - 30, 1, 5);
                 g.DrawRectangle(pen, _startPosX + 11, _startPosY - 25, 7, 1);
                 g.DrawRectangle(pen, _startPosX + 11, _startPosY - 30, 1, 5);
+
             }
             if (Bulldozerr)
             {
@@ -53,8 +54,14 @@ namespace FormTractor
                 g.DrawPolygon(pen, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
                 g.FillPolygon(Wheels, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
             }
-base.DrawTractor(g);
 
+
+            base.DrawTractor(g);
+        }
+
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
 
         }
     }
