@@ -34,20 +34,22 @@
             this.pictureBoxTakeTractor = new System.Windows.Forms.PictureBox();
             this.buttonTakeTractor = new System.Windows.Forms.Button();
             this.labelPlace = new System.Windows.Forms.Label();
+
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.labelLevel = new System.Windows.Forms.Label();
             this.buttonSetTraktor = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+
             this.buttonSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTractor)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxParking
@@ -98,10 +100,12 @@
             this.buttonTakeTractor.Click += new System.EventHandler(this.buttonTakeTractor_Click);
             // 
             // labelPlace
+
             // 
             this.labelPlace.AutoSize = true;
             this.labelPlace.Location = new System.Drawing.Point(6, 16);
             this.labelPlace.Name = "labelPlace";
+
             this.labelPlace.Size = new System.Drawing.Size(42, 13);
             this.labelPlace.TabIndex = 4;
             this.labelPlace.Text = "Место:\r\n";
@@ -118,11 +122,14 @@
             // labelLevel
             // 
             this.labelLevel.AutoSize = true;
+
             this.labelLevel.Location = new System.Drawing.Point(697, 10);
+
             this.labelLevel.Name = "labelLevel";
             this.labelLevel.Size = new System.Drawing.Size(48, 13);
             this.labelLevel.TabIndex = 7;
             this.labelLevel.Text = "Уравни:";
+
             // 
             // buttonSetTraktor
             // 
@@ -133,16 +140,17 @@
             this.buttonSetTraktor.Text = "Добавить";
             this.buttonSetTraktor.UseVisualStyleBackColor = true;
             this.buttonSetTraktor.Click += new System.EventHandler(this.buttonSetTraktor_Click);
+
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(815, 24);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(815, 24);
+            this.menuStrip.TabIndex = 9;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
@@ -193,20 +201,20 @@
             this.ClientSize = new System.Drawing.Size(815, 450);
             this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.buttonSetTraktor);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelLevel);
             this.Controls.Add(this.listBoxLevels);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBoxParking);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "FormParking";
             this.Text = "Стоянка";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTractor)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,13 +231,15 @@
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Label labelLevel;
         private System.Windows.Forms.Button buttonSetTraktor;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+
         private System.Windows.Forms.Button buttonSort;
+
     }
 }
 

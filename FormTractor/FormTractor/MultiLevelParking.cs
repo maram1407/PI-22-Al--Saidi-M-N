@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,8 @@ namespace FormTractor
         /// <summary>
         /// Высота окна отрисовки
         /// </summary>
-        private int pictureHeight;
+        private int pictureHeight;
+
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -162,9 +164,12 @@ namespace FormTractor
                 }
             }
 
-        }        public void Sort()
+        }
+        public void Sort()
         {
             parkingStages.Sort();
-        }
+        }
+
+
     }
 }
