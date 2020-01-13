@@ -52,27 +52,7 @@ namespace FormTractor
                 g.FillPolygon(Wheels, new PointF[] { new PointF(_startPosX + 40, _startPosY - 10), new PointF(_startPosX + 40, _startPosY + 40), new PointF(_startPosX + 90, _startPosY + 40) });
             }
 
-            // Кузов هيئه
-            g.FillRectangle(Kuzov, _startPosX - 50, _startPosY - 30, 50, 30);
-            g.DrawRectangle(pen, _startPosX - 50, _startPosY - 30, 50, 30);
-            g.FillRectangle(Kuzov, _startPosX - 50, _startPosY, 75, 40);
-            g.DrawRectangle(pen, _startPosX - 50, _startPosY, 75, 40);
-
-            //مستطيل
-            g.FillRectangle(Kuzov, _startPosX - 50, _startPosY - 30, 50, 30);
-            g.DrawRectangle(pen, _startPosX - 50, _startPosY - 30, 50, 30);
-            g.FillRectangle(Kuzov, _startPosX - 50, _startPosY, 75, 40);
-            g.DrawRectangle(pen, _startPosX - 50, _startPosY, 75, 40);
-            //Ковш
-            //مراه
-            g.FillRectangle(Kuzov, _startPosX - 25, _startPosY - 25, 20, 25);
-            g.DrawRectangle(pen, _startPosX - 25, _startPosY - 25, 20, 25);
-            //Колеса عجلات
-            g.DrawEllipse(pen, _startPosX - 50, _startPosY + 10, 40, 40);
-            g.FillEllipse(Wheels, _startPosX - 50, _startPosY + 10, 40, 40);
-            g.DrawEllipse(pen, _startPosX + 5, _startPosY + 30, 20, 20);
-            g.FillEllipse(Wheels, _startPosX + 5, _startPosY + 30, 20, 20);
-
+           
         }
     }
 }
