@@ -47,7 +47,7 @@ namespace FormTractor
         }
         private void buttonMove_Click(object sender, EventArgs e)
         {
-            
+
             string name = (sender as Button).Name;
             switch (name)
             {
@@ -66,5 +66,7 @@ namespace FormTractor
             }
             Draw();
         }
+
+        
     }
 }

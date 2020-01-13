@@ -46,7 +46,6 @@
             this.pictureBoxTractor.Size = new System.Drawing.Size(620, 317);
             this.pictureBoxTractor.TabIndex = 0;
             this.pictureBoxTractor.TabStop = false;
-            this.pictureBoxTractor.Click += new System.EventHandler(this.buttonMove_Click);
             // 
             // buttonCreate
             // 
@@ -66,7 +65,6 @@
             this.buttonCreateBullozer.TabIndex = 2;
             this.buttonCreateBullozer.Text = "создать Трактор-бульдозер";
             this.buttonCreateBullozer.UseVisualStyleBackColor = true;
-            this.buttonCreateBullozer.Click += new System.EventHandler(this.buttonCreateBullozer_Click);
             // 
             // buttonRight
             // 
@@ -130,7 +128,6 @@
             this.Controls.Add(this.pictureBoxTractor);
             this.Name = "FormTractor";
             this.Text = "Tractor";
-
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTractor)).EndInit();
             this.ResumeLayout(false);
 
