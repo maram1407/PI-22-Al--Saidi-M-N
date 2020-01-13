@@ -28,6 +28,7 @@ namespace FormTractor
             parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
             pictureBoxParking.Height);
 
+
             //заполнение listBox
             for (int i = 0; i < countLevel; i++)
             {
@@ -35,6 +36,7 @@ namespace FormTractor
             }
             listBoxLevels.SelectedIndex = 0;
             Draw();
+
         }
         /// Метод отрисовки парковки
         /// </summary>
@@ -72,6 +74,7 @@ namespace FormTractor
                     Draw();
                 }
             }
+
 
         }
 
@@ -127,6 +130,7 @@ namespace FormTractor
                 Draw();
             }
 
+
         }
 
         /// <summary>
@@ -137,6 +141,7 @@ namespace FormTractor
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
+
         }
 
 
