@@ -58,13 +58,11 @@ namespace FormTractor
 
             base.DrawTractor(g);
         }
+
         public void SetDopColor(Color color)
         {
             DopColor = color;
 
         }
-
-        
-        
     }
 }
