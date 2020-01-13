@@ -24,13 +24,7 @@ namespace FormTractor
             Crane = crane;
             Bulldozerr = bulldozerr;
         }
-        public void SetPosition(int x, int y, int width, int height)
-        {
-            _startPosX = x;
-            _startPosY = y;
-            _ScreenWidth = width;
-            _ScreenHeight = height;
-        }
+        
 
        
 
