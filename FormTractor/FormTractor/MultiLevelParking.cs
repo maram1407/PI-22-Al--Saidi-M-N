@@ -22,7 +22,8 @@ namespace FormTractor
         /// <summary>
         /// Высота окна отрисовки
         /// </summary>
-        private int pictureHeight;
+        private int pictureHeight;
+
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -160,6 +161,8 @@ namespace FormTractor
                 }
             }
             return true;
-        }
+        }
+
+
     }
 }
