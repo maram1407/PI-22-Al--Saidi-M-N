@@ -190,7 +190,7 @@
             this.Controls.Add(this.buttonSetTraktor);
             this.Controls.Add(this.labelLevel);
             this.Controls.Add(this.listBoxLevels);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox);
 
             this.Controls.Add(this.pictureBoxParking);
             this.Controls.Add(this.menuStrip);
