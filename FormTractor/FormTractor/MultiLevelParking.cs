@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace FormTractor
 {
@@ -16,6 +17,12 @@ namespace FormTractor
         /// </summary>
 
         private const int countPlaces = 20;
+        private int pictureWidth;
+        /// <summary>
+        /// Высота окна отрисовки
+        /// </summary>
+        private int pictureHeight;
+
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -46,6 +53,115 @@ namespace FormTractor
                 }
                 return null;
             }
-        }
+        }
+        /// Сохранение информации по автомобилям на парковках в файл
+        /// </summary>
+        /// <param name="filename">Путь и имя файла</param>
+        /// <returns></returns>
+        public bool SaveData(string filename)
+        {
+            if (File.Exists(filename))
+            {
+                File.Delete(filename);
+            }
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
+
+                //Записываем количество уровней
+                sw.WriteLine("CountLeveles:" + parkingStages.Count);
+                foreach (var level in parkingStages)
+                {
+                    //Начинаем уровень
+                    sw.WriteLine("Level");
+                    for (int i = 0; i < countPlaces; i++)
+                    {
+                        var tractor = level[i];
+                        if (tractor != null)
+                        {
+                            //если место не пустое
+                            //Записываем тип мшаины
+                            if (tractor.GetType().Name == "Tractor")
+                            {
+                                sw.Write(i + ":Tractor:");
+                            }
+                            if (tractor.GetType().Name == "TractorBulldozer")
+                            {
+                                sw.Write(i + ":TractorBulldozer:");
+                            }
+                            //Записываемые параметры
+                            sw.WriteLine(tractor);
+                        }
+                    }
+                }
+
+
+
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Загрузка нформации по автомобилям на парковках из файла
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public bool LoadData(string filename)
+        {
+            if (!File.Exists(filename))
+            {
+                return false;
+            }
+            string buffer = "";
+            using (StreamReader sr = new StreamReader(filename))
+            {
+
+                if ((buffer = sr.ReadLine()).Contains("CountLeveles"))
+                {
+
+                    int count = Convert.ToInt32(buffer.Split(':')[1]);
+                    if (parkingStages != null)
+                    {
+                        parkingStages.Clear();
+                    }
+                    parkingStages = new List<Parking<ITransport>>(count);
+                }
+                else
+                {
+
+                    return false;
+                }
+                int counter = -1;
+                ITransport tractor = null;
+                while ((buffer = sr.ReadLine()) != null)
+                {
+                    //идем по считанным записям
+                    if (buffer == "Level")
+                    {
+
+                        counter++;
+
+                        parkingStages.Add(new Parking<ITransport>(countPlaces, pictureWidth, pictureHeight));
+                        continue;
+                    }
+                    if (string.IsNullOrEmpty(buffer))
+                    {
+                        continue;
+                    }
+                    if (buffer.Split(':')[1] == "Tractor")
+                    {
+                        Console.WriteLine(buffer.Split(':')[2]);
+                        tractor = new Tractor(buffer.Split(':')[2]);
+                    }
+                    else if (buffer.Split(':')[1] == "TractorBulldozer")
+                    {
+                        tractor = new TractorBulldozer(buffer.Split(':')[2]);
+                    }
+                    parkingStages[counter][Convert.ToInt32(buffer.Split(':')[0])] = tractor;
+                }
+            }
+            return true;
+        }
+
+
     }
 }

@@ -24,6 +24,21 @@ namespace FormTractor
             Bulldozerr = bulldozerr;
         }
 
+        public TractorBulldozer(string info) : base(info)
+        {
+            string[] strs = info.Split(';');
+            if (strs.Length == 6)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                Crane = Convert.ToBoolean(strs[4]);
+                Bulldozerr = Convert.ToBoolean(strs[5]);
+
+            }
+        }
+
         public override void DrawTractor(Graphics g)
 
      
@@ -31,7 +46,10 @@ namespace FormTractor
             Pen pen = new Pen(Color.Black);
             Brush Kuzov = new SolidBrush(MainColor);
             Brush Wheels = new SolidBrush(DopColor);
-           
+
+            // отрисуем сперва передний спойлер автомобиля (чтобы потом отрисовка
+            // Form1 на него "легла")
+
             if (Crane)
             {
                 g.DrawRectangle(pen, _startPosX - 50, _startPosY - 50, 5, 50);
@@ -64,5 +82,12 @@ namespace FormTractor
             DopColor = color;
 
         }
+
+
+        public override string ToString()
+        {
+            return base.ToString() + ";" + DopColor.Name + ";" + Crane + ";" + Bulldozerr;
+        }
+
     }
 }
