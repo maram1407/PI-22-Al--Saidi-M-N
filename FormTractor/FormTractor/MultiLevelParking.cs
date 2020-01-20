@@ -105,11 +105,11 @@ namespace FormTractor
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             string buffer = "";
             using (StreamReader sr = new StreamReader(filename))
@@ -128,7 +128,8 @@ namespace FormTractor
                 else
                 {
 
-                    return false;
+                    //если нет такой записи, то это не те данные
+                    throw new Exception("Неверный формат файла");
                 }
                 int counter = -1;
                 ITransport tractor = null;
@@ -159,7 +160,8 @@ namespace FormTractor
                     parkingStages[counter][Convert.ToInt32(buffer.Split(':')[0])] = tractor;
                 }
             }
-            return true;
+
+
         }
 
 

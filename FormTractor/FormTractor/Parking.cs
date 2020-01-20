@@ -58,7 +58,7 @@ namespace FormTractor
         {
             if (p._places.Count == p._maxCount)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
@@ -92,7 +92,7 @@ namespace FormTractor
                 p._places.Remove(index);
                 return tractor;
             }
-            return null;
+            throw new ParkingNotFoundException(index);
         }
         /// <summary>
         /// Метод проверки заполнености парковочного места (ячейки массива)
@@ -143,6 +143,7 @@ namespace FormTractor
                 if (_places.ContainsKey(ind))
                 { return _places[ind]; }
                 return null;
+
             }
 
             set
@@ -151,6 +152,10 @@ namespace FormTractor
                 {
                     _places.Add(ind, value);
                     _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 50, ind % 5 * _placeSizeHeight + 55, PictureWidth, PictureHeight);
+                }
+                else
+                {
+                    throw new ParkingOccupiedPlaceException(ind);
                 }
             }
         }
