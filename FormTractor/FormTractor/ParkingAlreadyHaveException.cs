@@ -8,7 +8,7 @@ namespace FormTractor
 {
     class ParkingAlreadyHaveException : Exception
     {
-       public ParkingAlreadyHaveException() : base("На парковке уже есть такая машина")
+       public ParkingAlreadyHaveException() : base("На стоянке уже есть такой трактор")
  { }
     }
 }

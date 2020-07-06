@@ -10,7 +10,7 @@ namespace FormTractor
  
     class ParkingNotFoundException  : Exception
  {
-        public ParkingNotFoundException(int i) : base("Не найден автомобиль по месту "
+        public ParkingNotFoundException(int i) : base("Не найден трактор по месту "
             + i)
     { }
     

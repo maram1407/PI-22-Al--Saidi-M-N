@@ -9,7 +9,7 @@ namespace FormTractor
     /// Класс-ошибка "Если на парковке уже заняты все места"
     class ParkingOverflowException : Exception
     {
-        public ParkingOverflowException() : base("На парковке нет свободных мест")
+        public ParkingOverflowException() : base("На стоянке нет свободных мест")
         { }
    
     }

@@ -9,7 +9,7 @@ namespace FormTractor
     /// Класс-ошибка "Если место, на которое хотим поставить автомобиль уже занято"
     class ParkingOccupiedPlaceException : Exception
     {
-        public ParkingOccupiedPlaceException(int i) : base("На месте " + i + " уже стоит автомобиль")
+        public ParkingOccupiedPlaceException(int i) : base("На месте " + i + " уже стоит трактор")
         { }
     
     }
