@@ -45,6 +45,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 
+            this.buttonSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeTractor)).BeginInit();
@@ -122,7 +123,7 @@
             // 
             this.labelLevel.AutoSize = true;
 
-            this.labellevel.Location = new System.Drawing.Point(697, 10);
+            this.labelLevel.Location = new System.Drawing.Point(697, 10);
 
             this.labelLevel.Name = "labelLevel";
             this.labelLevel.Size = new System.Drawing.Size(48, 13);
@@ -132,7 +133,7 @@
             // 
             // buttonSetTraktor
             // 
-            this.buttonSetTraktor.Location = new System.Drawing.Point(666, 142);
+            this.buttonSetTraktor.Location = new System.Drawing.Point(666, 127);
             this.buttonSetTraktor.Name = "buttonSetTraktor";
             this.buttonSetTraktor.Size = new System.Drawing.Size(120, 43);
             this.buttonSetTraktor.TabIndex = 8;
@@ -163,14 +164,14 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
@@ -183,11 +184,22 @@
             // 
             this.saveFileDialog.Filter = "txt file | *.txt";
             // 
+            // buttonSort
+            // 
+            this.buttonSort.Location = new System.Drawing.Point(666, 176);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(120, 43);
+            this.buttonSort.TabIndex = 10;
+            this.buttonSort.Text = "Сортировать";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 450);
+            this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.buttonSetTraktor);
             this.Controls.Add(this.labelLevel);
             this.Controls.Add(this.listBoxLevels);
@@ -225,6 +237,8 @@
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+
+        private System.Windows.Forms.Button buttonSort;
 
     }
 }

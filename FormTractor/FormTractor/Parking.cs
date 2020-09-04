@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace FormTractor
 {
-    class Parking<T> where T : class, ITransport
+    class Parking<T> : IEnumerator<T>, IEnumerable<T>, IComparable<Parking<T>>
+        where T : class, ITransport
     {
         /// <summary>
         /// Массив объектов, которые храним    
@@ -33,6 +35,14 @@ namespace FormTractor
         /// Размер парковочного места (высота)
         /// </summary>
         private const int _placeSizeHeight = 120;
+        private int _currentIndex;
+        public int GetKey
+        {
+            get
+            {
+                return _places.Keys.ToList()[_currentIndex];
+            }
+        }
         /// <summary>
         /// Конструктор
         /// </summary>
@@ -43,6 +53,7 @@ namespace FormTractor
         {
             _maxCount = sizes;
             _places = new Dictionary<int, T>();
+            _currentIndex = -1;
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
 
@@ -60,6 +71,10 @@ namespace FormTractor
             {
                 throw new ParkingOverflowException();
             }
+            if (p._places.ContainsValue(tractor))
+            {
+                throw new ParkingAlreadyHaveException();
+            }
             for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))
@@ -111,10 +126,9 @@ namespace FormTractor
         public void Draw(Graphics g)
         {
             DrawMarking(g);
-            var keys = _places.Keys.ToList();
-            for (int i = 0; i < keys.Count; i++)
+            foreach (var tractor in _places)
             {
-                _places[keys[i]].DrawTractor(g);
+                tractor.Value.DrawTractor(g);
             }
         }
         /// <summary>
@@ -142,7 +156,7 @@ namespace FormTractor
             {
                 if (_places.ContainsKey(ind))
                 { return _places[ind]; }
-                return null;
+                throw new ParkingNotFoundException(ind);
 
             }
 
@@ -159,5 +173,115 @@ namespace FormTractor
                 }
             }
         }
+        public T Current
+        {
+            get
+            {
+                return _places[_places.Keys.ToList()[_currentIndex]];
+            }
+        }
+        /// <summary>
+        /// Метод интерфейса IEnumerator для получения текущего элемента
+        /// </summary>
+        object IEnumerator.Current
+        {
+            get
+            {
+                return Current;
+            }
+        }
+ /// <summary>
+ /// Метод интерфейса IEnumerator, вызываемый при удалении объекта
+ /// </summary>
+           public void Dispose()
+        {
+            _places.Clear();
+        }
+        /// <summary>
+        /// Метод интерфейса IEnumerator для перехода к следующему элементу или началу
+       
+ /// </summary>
+ /// <returns></returns>
+        public bool MoveNext()
+        {
+            if (_currentIndex + 1 >= _places.Count)
+            {
+                Reset();
+                return false;
+            }
+            _currentIndex++;
+            return true;
+        }
+        /// <summary>
+        /// Метод интерфейса IEnumerator для сброса и возврата к началу коллекции
+        /// </summary>
+        public void Reset()
+        {
+            _currentIndex = -1;
+        }
+        /// <summary>
+        /// Метод интерфейса IEnumerable
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerator<T> GetEnumerator()
+        {
+            return this;
+        }
+        /// <summary>
+        /// Метод интерфейса IEnumerable
+        /// </summary>
+        /// <returns></returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+        /// <summary>
+        /// Метод интерфейса IComparable
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int CompareTo(Parking<T> other)
+        {
+            if (_places.Count > other._places.Count)
+            {
+                return -1;
+            }
+            else if (_places.Count < other._places.Count)
+               
+        {
+                return 1;
+            }
+      else if (_places.Count > 0)
+            {
+                var thisKeys = _places.Keys.ToList();
+                var otherKeys = other._places.Keys.ToList();
+                for (int i = 0; i < _places.Count; ++i)
+                {
+                    if (_places[thisKeys[i]] is Tractor && other._places[thisKeys[i]] is
+                  TractorBulldozer)
+                    {
+                        return 1;
+                    }
+                    if (_places[thisKeys[i]] is TractorBulldozer && other._places[thisKeys[i]]
+                    is Tractor)
+                    {
+                        return -1;
+                    }
+                    if (_places[thisKeys[i]] is Tractor && other._places[thisKeys[i]] is
+                   Tractor)
+                    {
+                        return (_places[thisKeys[i]] is
+                       Tractor).CompareTo(other._places[thisKeys[i]] is Tractor);
+                    }
+                    if (_places[thisKeys[i]] is TractorBulldozer && other._places[thisKeys[i]]
+                    is TractorBulldozer)
+                    {
+                        return (_places[thisKeys[i]] is
+                      TractorBulldozer).CompareTo(other._places[thisKeys[i]] is TractorBulldozer);
+                    }
+                }
+            }
+            return 0;
+        }
     }
 }
